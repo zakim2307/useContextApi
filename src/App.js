@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+// import Profile from './components/Profile';
+// import Login from './components/Login';
+import React, { useState, createContext } from 'react';
+// import { LoginContext } from './Contexts/LoginContext';
+import FunctionContextComponent from './components/FunctionContextComponent';
+import ClassContextComponent from './components/ClassContextComponent';
+import ThemeProvider from './components/ThemeContext'
+
+export const ThemeContext = createContext();
 
 function App() {
+  // const [showProfile, setShowProfile] = useState(false);
+  // const [username, setUsername] = useState("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <LoginContext.Provider value={{username, setUsername, showProfile, setShowProfile}}>
+        {showProfile ? <Profile /> : <Login />}
+      </LoginContext.Provider> */}
+
+      <ThemeProvider>
+        <FunctionContextComponent />
+        <FunctionContextComponent />
+      </ThemeProvider>
     </div>
   );
 }
